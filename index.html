@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VapEventos</title>
+	 <!-- Librerias CSS-->
+	 <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	 <link href="css/theme.css" rel="stylesheet">
+	 <link href="css/style.css" rel="stylesheet">
+
+	 <!-- Librerias JSS MAPA GOOGLE-->
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLrN4i5DcwJJpkBXh3P1B3PySkK5KIbR0"></script>
+
+
+
+</head>
+
+<body ng-controller="DataLandingController as dl">
+	<div class="page">
+
+		<header class="page-header" style=" margin: 0px; min-height:0px !important; padding:0px !important">
+				<!-- Imagen con logotipo de la empresa -->
+				<img id="logotipo" ng-src="{{dl.logo}}" alt="" width="100%">
+		</header>
+		<!-- Formulario de  contactenos con subida de imagenes-->
+		<section class="bg-image well-xs text-center ">
+				<div class="container" >
+					<div class="col-md-12">
+								 <h4>PIDE TU COTIZACIÓN AQUÍ</h4>
+								<form class="rd-mailform"  id="formulario_contacto" >
+									<fieldset>
+										<div class="col-md-4">
+											<label data-add-placeholder="" class="mfInput">
+											<input class="text-center" ng-model="formulario.nombre" type="text"  required="required" placeholder="Nombre"  >
+
+											<label data-add-placeholder="" class="mfInput">
+											<input class="text-center" ng-model="formulario.ciudad"  type="text" equired="required"  placeholder="Ciudad" >
+
+											<label data-add-placeholder="" class="mfInput">
+											<input class="text-center" ng-model="formulario.email" type="text" equired="required" placeholder="Email">
+
+										</div>
+										<div class="col-md-2">
+
+										</div>
+										<div class="col-md-4">
+												<p style="font-size:15pt">Mensaje</p>
+												<label data-add-placeholder="" class="mfInput">
+												<textarea placeholder="Mensaje" ng-model="formulario.mensaje"></textarea>
+												<div class="mfControls mfControls-block">
+													<button class="btn btn-md btn-secondary" type="button" ng-click="submitContacto()" > <i class="fa fa-spinner fa-pulse fa-1x fa-fw" ng-show="activar"></i>Enviar!</button>
+												</div>
+										</div>
+
+									</fieldset>
+								</form>
+						</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Formulario de  contactenos con subida de imagenes -->
+
+		<!-- Bakery School  Reposteria Creativa quienes somos -->
+		<section ng-controller="ViewContentController as vct" ng-bind-html="vct.paginas[1].field_descripcion.und[0].value">
+
+		</section>
+		<!-- End Bakery School  Reposteria Creativa quienes somos -->
+
+		<!-- Seccion cursos de Resposter puede tomar -->
+		<section class="bg-contrast-variant-1" data-wow-duration="4s" data-wow-delay="3s">
+				<div class="row">
+									<div class="col-md-preffix-2 col-md-10">
+											<div style="padding: 50px 0px;" class="wow fadeInLeft">
+												<img src="images/titulo_bakery.png" alt="" class="img-responsive" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: none;" >
+											</div>
+									</div>
+
+									<div class="col-md-preffix-2 col-md-10">
+										<h3 class="inset-1 wow fadeInLeft " style="visibility: visible; animation-name: none; text-align: center">CURSOS  <span class="text-secondary-1">DISPONIBLES</span>
+										</h3>
+									</div>
+						</div>
+						<div class="row">
+							<div class="col-md-preffix-2 col-md-4">
+								<div class="decor-wrap wow fadeInLeft">
+									<img src="images/cursos_expres.png" alt="" class="wow fadeIn img-responsive" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: none;" >
+								</div>
+							</div>
+							<div class="col-xs-8 col-md-preffix-1 col-md-4 col-md-middle offset-2">
+								<h5 class="wow fadeInUp subtitulos" style="visibility: visible; animation-name: none;">CURSOS EXPRESS INTENSIVOS</h5>
+								<ul class="marked-list textos">
+									<li class="wow fadeInRight " data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: none;">
+									<a href="javascript:void(0);" ng-click="popupFormularioCursos('CUPCAKES')">CUPCAKES</br>
+									Masas, cremas, fondant y
+									decoración</a></li>
+									<li class="wow fadeInRight " data-wow-delay=".45s" style="visibility: visible; animation-delay: 0.45s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('BOCADITOS DE SAL Y DULCE ')">BOCADITOS DE SAL Y DULCE </br></a></li>
+									<li class="wow fadeInRight" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('TORTAS MIXTAS')">TORTAS MIXTAS
+									Masas, fondant y decoración</a></li>
+									<li class="wow fadeInRight" data-wow-delay=".55s" style="visibility: visible; animation-delay: 0.55s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('TORTAS MOJADAS')">TORTAS MOJADAS </br>
+									Masas y decoración</a></li>
+									<li class="wow fadeInRight" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('PIES Y TARTALETAS')">PIES Y TARTALETAS </br>
+									Masas y decoración</a></li>
+									<li class="wow fadeInRight" data-wow-delay=".65s" style="visibility: visible; animation-delay: 0.65s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('MUFFINS DE SAL Y DULCE ')">MUFFINS DE SAL Y DULCE </br>
+									Masas y decoración</a></li>
+									<li class="wow fadeInRight" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('MINI TORTAS')">MINI TORTAS </br>
+									Masas y decoración con fondant</a></li>
+									<li class="wow fadeInRight" data-wow-delay=".75s" style="visibility: visible; animation-delay: 0.75s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('POP CAKES')">POP CAKES </br>
+									Masas, decoración con fondant
+									chocolate blanco y negro </a></li>
+									<li class="wow fadeInRight" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('GALLETERÌA ')" >GALLETERÌA </br>
+									Masas, glassé, fondant y
+									decoración</a></li>
+									<li class="wow fadeInRight" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('ARREGLOS FRUTALES')" >ARREGLOS FRUTALES </br>
+									Decoración y montaje de frutas
+									Coloración de chocolate</a></li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="row row-xs-center" style="padding: 50px 0px;">
+							<div class=" col-md-6 col-md-push-2">
+								<div class="decor-wrap wow fadeInLeft">
+									<img src="images/cursos_permanentes.png" class="img-responsive">
+
+								</div>
+							</div>
+							<div class="col-xs-8  col-md-3 col-md-push-1 col-md-middle offset-2">
+								<h5 class="wow fadeInUp subtitulos" style="visibility: visible; animation-name: none;">CURSOS PERMANENTES</h5>
+								<ul class="marked-list">
+									<li class="wow fadeInLeft" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('DECORADOR REPOSTERO')">DECORADOR REPOSTERO
+									16 clases y 2 módulos
+									(básico y avanzado)</a></li>
+									<li class="wow fadeInLeft" data-wow-delay=".45s" style="visibility: visible; animation-delay: 0.45s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('PASTELERÍA')">PASTELERÍA
+									10 clases (aprenden un sinfín
+									de masas para tortas)</a></li>
+									<li class="wow fadeInLeft" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: none;"><a href="javascript:void(0);" ng-click="popupFormularioCursos('PANADERÍA')">PANADERÍA
+									2 módulos (básico y avanzado)</a></li>
+
+								</ul>
+							</div>
+						</div>
+		</section>
+		<!-- End Seccion cursos de Resposter puede tomar -->
+
+		<!-- Tipos de masas disponibles para pedidos de tortas -->
+		<section ng-controller="ViewContentController as vct" ng-bind-html="vct.paginas[3].field_descripcion.und[0].value">
+
+		</section>
+		<!-- End Tipos de masas disponibles para pedidos de tortas -->
+		<!-- Datos -->
+		<!-- Seccion Galeria de imagenes animacion de carrucel -->
+		<section ng-controller="ListImagesController as lti">
+					<ul style=" overflow:hidden">
+						<li ng-repeat="item in lti.galeria" style="float:left;">
+								<a href="#">
+									<img ng-src="{{lti.url_galeria_p + item.filename}}">
+								</a>
+						</li>
+					</ul>
+		</section>
+
+		<!-- Seccion Galeria de imagenes animacion de carrucel -->
+
+		<!-- Seccion donde colocamos el mapa con googlemap-->
+		<section class="rd-google-map" style="height: 300px">
+				 <!-- Colocamos mapa de google map -->
+				 <div id="map" style="height: 100%"></div>
+
+		</section>
+		<!-- End Seccion donde colocamos el mapa con googlemap-->
+
+		<!-- Seccion del pie de pagina contiene el copyright y impulsado por Runa Sapiens -->
+			<footer class="page-footer text-center" style="background:#555">
+					<div class="container">
+							<p class="copyright">
+								<p style="color:#fff">
+									 Copyright © 2016 - Todos los derechos reservados.
+										<br>
+										<span style="color:#ffad56">Impulsado por Runa Sapiens 2016.</span>
+								</p>
+							</p>
+					</div>
+			</footer>
+	</div>
+
+
+
+
+	<!--<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	 -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.js"></script>
+	<script src="js/google-mapp.js"></script>
+	<script src="app/app.module.js"></script>
+	<script src="app/app.config.js"></script>
+	<script src="app/core/data-landing.controller.js"></script>
+	<script src="app/core/data-landing.service.js"></script>
+	<script src="app/contenido/view-content.controller.js"></script>
+	<script src="app/contenido/view-content.service.js"></script>
+	<script src="app/galeria/list-images.controller.js"></script>
+	<script src="app/galeria/list-images.service.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    text-align: left;
+}
+.bg-color{
+	background-color: #F58220;
+	color: #fff;
+
+
+
+}
+.subtitulos{
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 20pt;
+	color:#F58220;
+}
+.textos{
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 17pt;
+	
+}
+.direccion{
+	font-size: 15pt;
+	 text-align: left;
+	 line-height:17pt;
+}
+
+.bg-contrast-variant-1 {
+    background: url("../images/fondo_cursos.png");
+}
+.slider_fecha{
+	width:33px;
+	height:33px;
+	position: absolute;
+	margin:0px 10px;
+    top: 50%;
+}
+.fecha_right{
+	background:url("../images/flechas_slider.png") no-repeat -47px 0px;
+	right:0px;
+}
+.fecha_left{
+	background:url("../images/flechas_slider.png") no-repeat;
+	left:0px;
+}
+
