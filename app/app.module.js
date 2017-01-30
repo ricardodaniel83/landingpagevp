@@ -1,9 +1,8 @@
   angular
     .module('app',[
       'ngAnimate',
+      'ngSanitize',
     	'ui.bootstrap',
-    	'ngSanitize',
-      'ngRoute',
       //'app.core',
       //'app.cursos',
       //'app.galeria',

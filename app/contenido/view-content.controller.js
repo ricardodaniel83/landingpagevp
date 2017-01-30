@@ -14,6 +14,7 @@ function ViewContentController(viewContentService){
   function getPaginasLanding(){
     viewContentService.getContentHtml().then(function(data){
         vm.paginas = data;
+        console.log(data);
         return vm.paginas;
     });
   }
