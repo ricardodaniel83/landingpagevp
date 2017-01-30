@@ -8,9 +8,7 @@ function DataLandingController(dataLandingService, $rootScope){
   var vm = this;
   vm.landing =[];
   vm.logo ="";
-
   llenarDatos();
-
   function llenarDatos(){
     dataLandingService.getConfingLanding().then(function(data){
                  vm.landing = data;
@@ -18,5 +16,6 @@ function DataLandingController(dataLandingService, $rootScope){
                  return vm.landing;
                });
   }
+
 
 }

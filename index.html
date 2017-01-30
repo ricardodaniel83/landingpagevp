@@ -25,19 +25,19 @@
 		<!-- Formulario de  contactenos con subida de imagenes-->
 		<section class="bg-image well-xs text-center ">
 				<div class="container" >
-					<div class="col-md-12">
+					<div class="col-md-12" ng-controller="viewFromContactenosController as vfc">
 								 <h4>PIDE TU COTIZACIÓN AQUÍ</h4>
 								<form class="rd-mailform"  id="formulario_contacto" >
 									<fieldset>
 										<div class="col-md-4">
 											<label data-add-placeholder="" class="mfInput">
-											<input class="text-center" ng-model="formulario.nombre" type="text"  required="required" placeholder="Nombre"  >
+											<input class="text-center" ng-model="vfc.formulario.nombre" type="text"  required="required" placeholder="Nombre"  >
 
 											<label data-add-placeholder="" class="mfInput">
-											<input class="text-center" ng-model="formulario.ciudad"  type="text" equired="required"  placeholder="Ciudad" >
+											<input class="text-center" ng-model="vfc.formulario.ciudad"  type="text" equired="required"  placeholder="Ciudad" >
 
 											<label data-add-placeholder="" class="mfInput">
-											<input class="text-center" ng-model="formulario.email" type="text" equired="required" placeholder="Email">
+											<input class="text-center" ng-model="vfc.formulario.email" type="text" equired="required" placeholder="Email">
 
 										</div>
 										<div class="col-md-2">
@@ -46,9 +46,9 @@
 										<div class="col-md-4">
 												<p style="font-size:15pt">Mensaje</p>
 												<label data-add-placeholder="" class="mfInput">
-												<textarea placeholder="Mensaje" ng-model="formulario.mensaje"></textarea>
+												<textarea placeholder="Mensaje" ng-model="vfc.formulario.mensaje"></textarea>
 												<div class="mfControls mfControls-block">
-													<button class="btn btn-md btn-secondary" type="button" ng-click="submitContacto()" > <i class="fa fa-spinner fa-pulse fa-1x fa-fw" ng-show="activar"></i>Enviar!</button>
+													<button class="btn btn-md btn-secondary" type="button" ng-click="vfc.submitContacto()" > <i class="fa fa-spinner fa-pulse fa-1x fa-fw" ng-show="vfc.activar"></i>Enviar!</button>
 												</div>
 										</div>
 
@@ -231,6 +231,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.js"></script>
 	 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
 	<script src="js/google-mapp.js"></script>
+	<script src="js/bootbox/bootbox.min.js"></script>
 	<script src="app/app.module.js"></script>
 	<script src="app/app.config.js"></script>
 	<script src="app/core/data-landing.controller.js"></script>
@@ -241,5 +242,7 @@
 	<script src="app/galeria/list-images.service.js"></script>
 	<script src="app/blog/listBlog.controller.js"></script>
 	<script src="app/blog/listBlog.service.js"></script>
+	<script src="app/formularios/view-from-contactenos.controller.js"></script>
+	<script src="app/formularios/view-from-contactenos.service.js"></script>
 </body>
 </html>
