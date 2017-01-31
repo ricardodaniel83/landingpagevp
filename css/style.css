@@ -151,3 +151,9 @@ input{
 	background:url("../images/flechas_slider.png") no-repeat;
 	left:0px;
 }
+
+.itemBlogView h1{
+   font-family: "HelveticaNeue-Light", Arial;
+   font-size: 20px;
+   margin-top:0px
+}

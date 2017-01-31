@@ -1,0 +1,32 @@
+<div class="modal-header" style="background:#F58220;color:#fff; ">
+	<button type="button" class="close"  ng-click="close()">&times;</button>
+    <h5 class="modal-title" style="font-size: 18px;">Test</h5>
+</div>
+<div class="modal-body">
+	<form action="" method="POST">
+
+		<div class="form-group">
+
+			<input type="text" class="form-control" ng-model="contactoPopup.formulario.nombre" placeholder="Nombre">
+		</div>
+		<div class="form-group">
+
+			<input type="text" class="form-control" ng-model="contactoPopup.formulario.email" placeholder="Email">
+		</div>
+		<div class="form-group">
+
+			<input type="text" class="form-control" ng-model="contactoPopup.formulario.telefono" placeholder="Telefono">
+		</div>
+		<div class="form-group">
+
+			<input type="text" class="form-control" ng-model="contactoPopup.formulario.curso" disabled="disabled">
+		</div>
+		<div class="form-group">
+			<textarea ng-model="contactoPopup.formulario.mensaje"  class="form-control" placeholder="Mensaje"></textarea>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+
+    <button class="btn btn-info" ng-click="contactoPopup.enviar()"><i class="fa fa-spinner fa-pulse fa-1x fa-fw" ng-show="contactoPopup.activar"></i>Enviar</button>
+</div>

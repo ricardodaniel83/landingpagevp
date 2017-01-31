@@ -1,8 +1,8 @@
 angular
   .module('app')
   .controller('viewFromContactenosController',viewFromContactenosController);
-  viewFromContactenosController.$inject =['$rootScope','viewFromContactenosService'];
-  function viewFromContactenosController($rootScope, viewFromContactenosService){
+  viewFromContactenosController.$inject =['$rootScope','viewFromContactenosService','$uibModal'];
+  function viewFromContactenosController($rootScope, viewFromContactenosService, $uibModal){
       var vm = this;
       vm.formulario ={
         nombre:'',
@@ -12,6 +12,7 @@ angular
       };
       vm.activo = false;
       vm.submitContacto = submitContacto;
+      vm.popupFormularioCursos = popupFormularioCursos;
 
       function submitContacto(){
             if(validarFormulario()){
@@ -19,12 +20,32 @@ angular
                 viewFromContactenosService.submitDataForm(vm.formulario,'Cotizacion')
                       .then(function(result){
                         bootbox.alert("Estimado "+result+" su información fu enviada con exito");
-                        vm.activar = false;
+                        contactoPopup.activar = false;
                       })
                       .catch(function(err){
                         bootbox.alert("A ocurrido un error al envio del formulario "+ err);
                       });
             }
+      }
+
+      function popupFormularioCursos(curso){
+        var modalInstance = $uibModal.open({
+              animation: true,
+              templateUrl:'app/formularios/viewFromContactoPopup.html',
+              controller:'viewFromContactoPopupController',
+              controllerAs:'contactoPopup',
+              size: 'sm',
+              resolve: {
+                data:{
+                  titulo: 'Formulario de Cursos',
+                  curso:curso,
+                }
+            }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+            bootbox.alert("Estimado "+selectedItem+" su información fu enviada con exito");
+          });
       }
 
       function validarFormulario(){

@@ -2,9 +2,9 @@ angular
   .module("app")
   .controller('listBlogController',listBlogController);
 
-  listBlogController.$inject =['listBlogService','$rootScope'];
+  listBlogController.$inject =['listBlogService','$rootScope','$uibModal'];
 
-  function listBlogController(listBlogService,$rootScope){
+  function listBlogController(listBlogService,$rootScope, $uibModal){
     var vm = this;
     vm.url_imagen = $rootScope.dominio + $rootScope.imagenes+"blog_principal/";
     vm.url_imagen_p =  $rootScope.dominio + $rootScope.imagenes+"styles/galeria/public/blog_principal/"
@@ -18,7 +18,22 @@ angular
     });
 
     function viewItemBlog(item) {
-      console.log(item);
+      var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl:'app/blog/viewItemBlog.html',
+            controller:'viewItemBlogController',
+            controllerAs:'itemBlog',
+            size: 'lg',
+            resolve: {
+              data:{
+                item:item,
+              }
+          }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+          bootbox.alert("Estimado "+selectedItem+" su información fu enviada con exito");
+        });
     }
 
   }
