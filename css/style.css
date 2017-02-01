@@ -59,7 +59,7 @@ input{
 
 .fondo-tipos-masas{
    background: url("../images/marco_tiposdemasa.png") no-repeat center top;
-   //background-size: 100%;
+   background-size: 60%%;
 }
 .margenes-marco{
   padding: 0 160px 60px;
@@ -96,6 +96,9 @@ input{
 }
 .content-blog{
   padding-top: 120px;
+  background: url("../images/marco_blog.png") no-repeat center 60px;
+  //background-size: 100%;
+
 }
 .content-item {
    font-size: 15px;
@@ -120,8 +123,8 @@ input{
 
 }
 .fondo-direccion{
-   background: url("../images/fondo_blog.png") no-repeat;
-   background-size: 100%;
+   background: url("../images/fondo_blog.png");
+   //background-size: 100%;
    color: #fff;
    font-size: 17pt;
    font-family: "HelveticaNeue-Light", Arial;
