@@ -571,7 +571,7 @@ html.lt-ie10 .row-no-gutter > * + [class*="col"], .row-no-gutter > * + [class*="
 }
 .row > .col-md-6 {
     flex-basis: 50%;
-    max-width: 50%;
+    max-width: 30%;
 }
 .row > .col-md-preffix-6 {
     margin-left: 50%;
@@ -1226,7 +1226,7 @@ a:hover:not(.brand):not(.ui-to-top) {
 }
 @media (min-width: 992px) {
 * + p {
-    margin-top: 87px;
+    margin-top: 37px;
 }
 }
 * + .marked-list {
@@ -1234,7 +1234,7 @@ a:hover:not(.brand):not(.ui-to-top) {
 }
 @media (min-width: 992px) {
 * + .marked-list {
-    margin-top: 65px;
+    padding-bottom: 65px;
 }
 }
 * + .inline-list {
