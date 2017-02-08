@@ -1,7 +1,7 @@
 <div class="modal-header" style="background:#F58220;color:#fff; ">
 	<button type="button" class="close"  ng-click="itemBlog.close()">&times;</button>
 </div>
-<div class="modal-body" class="itemBlogView">
+<div class="modal-body" class="itemBlogView" style="padding: 0px 10px 600px 10px;">
   <img ng-src="{{itemBlog.url_imagen + itemBlog.data.field_logo.und[0].filename}}" class="img-responsive">
   <h1 style="font-size:25px; margin-top:10px;">{{itemBlog.data.title}}</h1>
   <div class="col-md-12" ng-bind-html="itemBlog.data.field_descripcion.und[0].value" >
