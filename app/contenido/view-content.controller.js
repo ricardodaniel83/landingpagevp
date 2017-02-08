@@ -7,6 +7,7 @@ ViewContentController.$inject = ['viewContentService'];
 function ViewContentController(viewContentService){
   var vm = this;
   vm.paginas =[];
+  vm.contactenos = contactenos;
 
 
   getPaginasLanding();
@@ -17,5 +18,9 @@ function ViewContentController(viewContentService){
         console.log(data);
         return vm.paginas;
     });
+  }
+
+  function contactenos(){
+      alert("Entre");
   }
 }
