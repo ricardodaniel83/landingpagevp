@@ -1316,7 +1316,7 @@ p + p {
     margin-top: 30px;
 }
 .row + .row {
-    margin-top: 93px;
+    margin-top: 25px;
 }
 @media (min-width: 992px) {
 .inset-1 {
