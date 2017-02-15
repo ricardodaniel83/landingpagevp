@@ -6,7 +6,11 @@
 	<title>VapEventos</title>
 	 <!-- Librerias CSS-->
 	 <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	 <link href="css/fontawesome/css/font-awesome.css" rel="stylesheet">
+	 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	 <!-- Carrucel slick -->
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+	 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
+	 <!-- Theme Web -->
 	 <link href="css/theme.css" rel="stylesheet">
 	 <link href="css/style.css" rel="stylesheet">
 
@@ -39,8 +43,9 @@
 											<label data-add-placeholder="" class="mfInput">
 											<input class="text-center" ng-model="vfc.formulario.email" type="text" equired="required" placeholder="Email">
 
-											<label data-add-placeholder="" class="mfInput">
-											<input class="text-center" ng-model="vfc.formulario.file" type="file" equired="required">
+											<label class="btn btn-warning ">
+													adjuntar archivo <input type="file" style="display: none;">
+											</label>
 
 										</div>
 										<div class="col-md-2">
@@ -159,22 +164,19 @@
 		<!-- End Seccion cursos de Resposter puede tomar -->
 
 		<!-- Tipos de masas disponibles para pedidos de tortas -->
-		<section ng-controller="ViewContentController as vct" ng-bind-html="vct.paginas[3].field_descripcion.und[0].value">
+		<section  ng-controller="ViewContentController as vct" ng-bind-html="vct.paginas[3].field_descripcion.und[0].value">
 
 		</section>
 		<!-- End Tipos de masas disponibles para pedidos de tortas -->
 		<!-- Datos -->
 		<!-- Seccion Galeria de imagenes animacion de carrucel -->
-		<section ng-controller="ListImagesController as lti">
-			<!--<div style="height: 305px">
-					<div uib-carousel active="lti.active" interval="lti.myInterval" no-wrap="lti.noWrapSlides">
-				      <div uib-slide ng-repeat="slide in lti.slides track by slide.fid" index="slide.fid">
-				        <img ng-src="{{lti.url_galeria + slide.filename}}" style="margin:auto;">
-				      </div>
-			    </div>
-				</div>-->
+		<section style="background:#f58220;" ng-controller="ListImagesController as lti">
+			<slick class="slider" settings="lti.slickConfig " ng-if="lti.numberLoaded" dots="true">
+						<img ng-src="{{lti.url_galeria_p   + slide.filename}}" ng-repeat="slide in lti.slides">
+			</slick>
 		</section>
-
+		<!--End Seccion Galeria de imagenes animacion de carrucel -->
+		<!-- Session de Direccion y listado de blog -->
 		<section >
 			<div class="container-fluid fondo-direccion padding-0">
 					<div class="col-md-3 col-md-offset-1">
@@ -201,9 +203,9 @@
 			</div>
 
 		</section>
+		<!--End Session de Direccion y listado de blog -->
 
 
-		<!-- Seccion Galeria de imagenes animacion de carrucel -->
 
 		<!-- Seccion donde colocamos el mapa con googlemap-->
 		<section class="rd-google-map" style="height: 300px">
@@ -227,6 +229,10 @@
 			</footer>
 	</div>
 
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	 <!-- Librerias de aplicacion angular  -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
@@ -235,6 +241,9 @@
 	 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
 	<script src="js/google-mapp.js"></script>
 	<script src="js/bootbox/bootbox.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+	<script src="js/slick/angular-slick.js"></script>
+
 	<script src="app/app.module.js"></script>
 	<script src="app/app.config.js"></script>
 	<script src="app/core/data-landing.controller.js"></script>

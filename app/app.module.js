@@ -2,11 +2,6 @@
     .module('app',[
       'ngAnimate',
       'ngSanitize',
+      'slickCarousel',
     	'ui.bootstrap',
-      //'app.core',
-      //'app.cursos',
-      //'app.galeria',
-      //'app.formularios',
-      //'app.mapa',
-      //'app.contenidos'
     ]);
