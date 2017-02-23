@@ -59,7 +59,7 @@ input{
 
 .fondo-tipos-masas{
    background: url("../images/marco_tiposdemasa.png") no-repeat center top;
-   background-size: 78%;
+   background-size: 78% 100%;
    margin-top: 12px;
 }
 .margenes-marco{
