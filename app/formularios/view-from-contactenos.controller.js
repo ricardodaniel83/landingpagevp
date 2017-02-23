@@ -34,7 +34,7 @@ angular
               templateUrl:'app/formularios/viewFromContactoPopup.html',
               controller:'viewFromContactoPopupController',
               controllerAs:'contactoPopup',
-              size: 'sm',
+              size: 'lg',
               resolve: {
                 data:{
                   titulo: 'Formulario de Cursos',

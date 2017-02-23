@@ -99,6 +99,7 @@ input{
   padding-top: 120px;
   background: url("../images/marco_blog.png") no-repeat center 60px;
   //background-size: 100%;
+  overflow: hidden;
 
 }
 .content-item {
@@ -184,4 +185,8 @@ input{
     background: white;
     cursor: inherit;
     display: block;
+}
+
+.modal-body ul{
+   margin-left: 10px;
 }
