@@ -24,7 +24,8 @@ function initialize() {
     var mapOptions = {
       zoom: 18,
       center: myLatLng,
-      styles: styleArray
+      //styles: styleArray
+      mapTypeId: google.maps.MapTypeId.TERRAIN
     };
 
     var map = new google.maps.Map(document.getElementById('map'),
